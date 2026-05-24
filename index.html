@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3DSTATES — Разработка 3D-моделей для АГР</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Advent+Pro:wght@200&family=Arsenal+SC&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="variables.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ═══ MOBILE MENU ═══════════════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu__close" onclick="closeMobileMenu()" aria-label="Закрыть">×</button>
+  <a href="#" onclick="closeMobileMenu()">Главная</a>
+  <a href="#usp" onclick="closeMobileMenu()">О нас</a>
+  <a href="#purpose" onclick="closeMobileMenu()">Этапы работы</a>
+  <a href="#featured" onclick="closeMobileMenu()">Работы</a>
+  <a href="#contact" onclick="closeMobileMenu()">Контакты</a>
+</div>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero" id="home">
+  <img class="hero__bg" src="assets/images/hero-bg.png" alt="Архитектурная визуализация">
+  <div class="hero__gradient"></div>
+
+  <nav class="hero__nav">
+    <a href="#contact" class="hero__nav-link hero__nav-link--desktop">Контакты</a>
+    <a href="#contact" class="btn btn--white btn--desktop">Заказать модель</a>
+    <button class="nav__hamburger" onclick="openMobileMenu()" aria-label="Меню">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="hero__divider-line"></div>
+
+  <div class="hero__logo-wrap" aria-hidden="true">
+    <div class="hero__logo">3DSTATES</div>
+  </div>
+
+  <div class="hero__content">
+    <p class="hero__subtitle">Разработка 3D-моделей и консультация по требованиям АГР</p>
+    <div class="hero__buttons">
+      <a href="#contact" class="btn btn--white">Заказать модель</a>
+      <a href="#contact" class="btn btn--white">Бесплатная консультация</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIVIDER ════════════════════════════════════════════ -->
+<div class="divider"><div class="divider__line"></div></div>
+
+<!-- ═══ USP ════════════════════════════════════════════════ -->
+<section class="usp" id="usp">
+  <img class="usp__bg" src="assets/images/usp-bg.png" alt="">
+  <h2 class="usp__title">Почему мы?</h2>
+  <div class="usp__grid">
+
+    <div class="usp__item">
+      <!-- Точность: медальон/печать с галочкой — 12-точечный бейдж -->
+      <svg class="usp__icon" viewBox="0 0 44 44" fill="none" stroke="white" stroke-width="1.4" aria-hidden="true">
+        <polygon points="22,5 25.9,7.5 30.5,7.3 32.6,11.4 36.7,13.5 36.5,18.1 39,22 36.5,25.9 36.7,30.5 32.6,32.6 30.5,36.7 25.9,36.5 22,39 18.1,36.5 13.5,36.7 11.4,32.6 7.3,30.5 7.5,25.9 5,22 7.5,18.1 7.3,13.5 11.4,11.4 13.5,7.3 18.1,7.5"/>
+        <path d="M15 22.5l6 6 8-11" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"/>
+      </svg>
+      <h3 class="usp__item-title">Точность</h3>
+      <p class="usp__item-text">Наши специалисты тщательно изучают требования и постоянно улучшают навыки разработки, что положительно сказывается на соответствии критериям архкомиссии</p>
+    </div>
+
+    <div class="usp__item">
+      <!-- Скорость: силуэт человека -->
+      <svg class="usp__icon" viewBox="0 0 44 44" fill="none" stroke="white" stroke-width="1.4" aria-hidden="true">
+        <circle cx="22" cy="14" r="7"/>
+        <path d="M10 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke-linecap="round"/>
+      </svg>
+      <h3 class="usp__item-title">Скорость</h3>
+      <p class="usp__item-text">Большой опыт разработки позволяет нам выполнять работу быстро и без ошибок, неизменно удовлетворяя запрос заказчика</p>
+    </div>
+
+    <div class="usp__item">
+      <!-- Гибкость: дом с деревом -->
+      <svg class="usp__icon" viewBox="0 0 44 44" fill="none" stroke="white" stroke-width="1.4" aria-hidden="true">
+        <!-- Дерево -->
+        <line x1="8" y1="38" x2="8" y2="27" stroke-linecap="round"/>
+        <ellipse cx="8" cy="22" rx="5" ry="6" stroke-width="1.3"/>
+        <!-- Дом -->
+        <path d="M16 38h22M19 38V25M35 38V25M26 10L15 25h24L26 10z" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M22 38V31h8v7" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3 class="usp__item-title">Гибкость</h3>
+      <p class="usp__item-text">Мы всегда подбираем наиболее оптимальные условия взаимодействия с заказчиком. Срок и стоимость разработки — обсуждаемые переменные</p>
+    </div>
+
+    <div class="usp__item">
+      <!-- Гарантия: растущий график с трендом -->
+      <svg class="usp__icon" viewBox="0 0 44 44" fill="none" stroke="white" stroke-width="1.4" aria-hidden="true">
+        <rect x="5" y="28" width="8" height="10" rx="1"/>
+        <rect x="18" y="20" width="8" height="18" rx="1"/>
+        <rect x="31" y="12" width="8" height="26" rx="1"/>
+        <path d="M9 22l9-8 8 5 9-10" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M31 9h6v6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3 class="usp__item-title">Гарантия</h3>
+      <p class="usp__item-text">Мы гарантируем заказчику сопровождение в процессе согласования модели с Департаментом Градполитики, обязуясь вносить необходимые корректировки в течение трёх месяцев с момента передачи первой итерации</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ DIVIDER ════════════════════════════════════════════ -->
+<div class="divider"><div class="divider__line"></div></div>
+
+<!-- ═══ CTA (КАК ВЫГЛЯДИТ РЕЗУЛЬТАТ) ══════════════════════ -->
+<section class="cta" id="cta">
+  <div class="cta__header">
+    <h2 class="cta__title">Как выглядит результат нашей работы?</h2>
+    <p class="cta__subtitle">статистические данные, ВПМ или НПМ, сколько полигонов в модели, время затраченное на проект</p>
+  </div>
+  <div class="cta__slider">
+    <div class="cta__slide">
+      <span class="cta__slide-num">1.</span>
+    </div>
+    <div class="cta__slide">
+      <span class="cta__slide-num">2.</span>
+    </div>
+  </div>
+  <div class="cta__footer">
+    <a href="#contact" class="btn btn--white">Заказать модель</a>
+  </div>
+</section>
+
+<!-- ═══ DIVIDER ════════════════════════════════════════════ -->
+<div class="divider"><div class="divider__line"></div></div>
+
+<!-- ═══ PURPOSE (ЭТАПЫ РАБОТЫ) ════════════════════════════ -->
+<section class="purpose" id="purpose">
+  <div class="purpose__left">
+    <h2 class="purpose__title">Этапы работы</h2>
+    <p class="purpose__desc">Разработке модели всегда предшествует анализ материалов, предоставленных заказчиком — это самый важный этап, после которого мы договариваемся о комфортных для вас сроках и цене. После того, как основные условия сотрудничества определены, мы приступаем к работе и изготавливаем ВПМ/НПМ для АГР. В случае, если архкомиссия сослалась на необходимость внесения правок — мы устраним ошибки и внесём корректировки</p>
+    <ul class="purpose__steps">
+      <li class="purpose__step">1 .Анализ материалов</li>
+      <li class="purpose__step">2 .Заключение договора</li>
+      <li class="purpose__step">3 .Разработка и передача модели</li>
+      <li class="purpose__step">4 .Внесение правок по замечаниям архкомиссии</li>
+    </ul>
+  </div>
+  <div class="purpose__right">
+    <img class="purpose__img" src="assets/images/building.png" alt="Пример архитектурного проекта 3DSTATES">
+  </div>
+</section>
+
+<!-- ═══ DIVIDER ════════════════════════════════════════════ -->
+<div class="divider"><div class="divider__line"></div></div>
+
+<!-- ═══ FEATURED (ПРИМЕР НАШИХ РАБОТ) ════════════════════ -->
+<section class="featured" id="featured">
+  <img class="featured__bg" src="assets/images/featured-bg.png" alt="">
+  <div class="featured__header">
+    <h2 class="featured__title">Пример наших работ</h2>
+    <p class="featured__subtitle">статистические данные, ВПМ или НПМ, сколько полигонов в модели, время затраченное на проект</p>
+  </div>
+  <div class="featured__viewer">
+    <p class="featured__viewer-text">3D-просмотрщик моделей будет добавлен</p>
+  </div>
+  <div class="featured__line"></div>
+  <div style="height: 60px; background: #000;"></div>
+</section>
+
+<!-- ═══ TESTIMONIALS (ОТЗЫВЫ) ═════════════════════════════ -->
+<section class="testimonials" id="testimonials">
+  <img class="testimonials__bg" src="assets/images/testimonials-bg.png" alt="">
+  <div class="testimonials__content">
+    <h2 class="testimonials__title">Отзывы наших клиентов</h2>
+    <div class="testimonials__quote-icon">
+      <svg width="36" height="28" viewBox="0 0 36 28" fill="white" aria-hidden="true">
+        <path d="M0 28V17.6C0 12.267 1.333 8.2 4 5.4 6.667 2.467 10.667 0.733333 16 0.2L17.2 3C14.267 3.667 12.067 4.8 10.6 6.4 9.13333 7.86667 8.33333 9.93333 8.2 12.6H14.4V28H0ZM21.6 28V17.6C21.6 12.267 22.9333 8.2 25.6 5.4 28.2667 2.467 32.2667 0.733333 37.6 0.2L38.8 3C35.8667 3.667 33.6667 4.8 32.2 6.4 30.7333 7.86667 29.9333 9.93333 29.8 12.6H36V28H21.6Z"/>
+      </svg>
+    </div>
+    <p class="testimonials__text">Отзывы клиентов будут добавлены. Здесь появятся реальные отзывы с логотипами организаций заказчиков.</p>
+    <div class="testimonials__author">
+      <div class="testimonials__avatar"></div>
+      <div>
+        <div class="testimonials__name">Клиент</div>
+        <div class="testimonials__role">Организация-заказчик</div>
+      </div>
+    </div>
+    <div class="testimonials__nav">
+      <button class="testimonials__nav-btn" aria-label="Предыдущий">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 3L5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="testimonials__nav-btn" aria-label="Следующий">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT FORM ═══════════════════════════════════════ -->
+<section id="contact">
+  <h2 class="contact__title">Оставить заявку</h2>
+  <form class="contact__form" onsubmit="handleSubmit(event)">
+
+    <div class="contact__row">
+      <div class="contact__field">
+        <label class="contact__label" for="f-name">ИМЯ</label>
+        <input class="contact__input" id="f-name" type="text" name="name" placeholder="Иван" required>
+      </div>
+      <div class="contact__field">
+        <label class="contact__label" for="f-surname">ФАМИЛИЯ</label>
+        <input class="contact__input" id="f-surname" type="text" name="surname" placeholder="Иванов" required>
+      </div>
+    </div>
+
+    <div class="contact__field">
+      <label class="contact__label" for="f-phone">НОМЕР ТЕЛЕФОНА</label>
+      <input class="contact__input" id="f-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+    </div>
+
+    <div class="contact__field">
+      <label class="contact__label" for="f-email">ПОЧТА</label>
+      <input class="contact__input" id="f-email" type="email" name="email" placeholder="example@mail.ru" required>
+    </div>
+
+    <div>
+      <p class="contact__group-label">УДОБНЫЙ СПОСОБ СВЯЗИ</p>
+      <div class="contact__radio-group">
+        <label class="contact__radio-label">
+          <input type="radio" name="contact_method" value="call"> Звонок
+        </label>
+        <label class="contact__radio-label">
+          <input type="radio" name="contact_method" value="telegram"> Telegram / WhatsApp
+        </label>
+        <label class="contact__radio-label">
+          <input type="radio" name="contact_method" value="email"> Рабочая почта
+        </label>
+      </div>
+    </div>
+
+    <label class="contact__consent">
+      <input type="checkbox" name="consent" required>
+      Согласие на обработку персональных данных
+    </label>
+
+    <div class="contact__submit">
+      <button type="submit" class="btn btn--white btn--lg">ОСТАВИТЬ ЗАЯВКУ</button>
+    </div>
+
+  </form>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+<footer class="footer">
+
+  <div class="footer__ticker-wrap">
+    <div class="footer__ticker" id="ticker">
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
+    </div>
+  </div>
+
+  <div class="footer__main">
+    <a href="#home" class="footer__logo">3DSTATES</a>
+    <nav>
+      <ul class="footer__nav">
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#usp">О нас</a></li>
+        <li><a href="#purpose">Этапы работы</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </nav>
+    <div class="footer__socials">
+      <a href="#" class="footer__social" aria-label="Instagram">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5.5"/>
+          <circle cx="12" cy="12" r="4.5"/>
+          <circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/>
+        </svg>
+      </a>
+      <a href="#" class="footer__social" aria-label="Telegram">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <path d="M21 5L2 12.5l7 1.5M21 5l-5 15-5.5-6M21 5L9 14m0 0V20l3.5-3"/>
+        </svg>
+      </a>
+      <a href="#" class="footer__social" aria-label="WhatsApp">
+        <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+          <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <span class="footer__copy">© 2024 3DSTATES. Все права защищены.</span>
+    <span class="footer__copy">Разработка 3D-моделей для АГР</span>
+  </div>
+
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

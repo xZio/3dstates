@@ -1,0 +1,32 @@
+:root {
+  /* Цвета */
+  --color-bg:         #000000;
+  --color-white:      #ffffff;
+  --color-white-80:   rgba(255, 255, 255, 0.80);
+  --color-white-65:   rgba(255, 255, 255, 0.65);
+  --color-white-60:   rgba(255, 255, 255, 0.60);
+  --color-white-55:   rgba(255, 255, 255, 0.55);
+  --color-white-45:   rgba(255, 255, 255, 0.45);
+  --color-white-35:   rgba(255, 255, 255, 0.35);
+  --color-white-25:   rgba(255, 255, 255, 0.25);
+  --color-white-18:   rgba(255, 255, 255, 0.18);
+  --color-separator:  rgba(255, 255, 255, 0.40);
+  --color-slide-bg:   #ffffff;
+  --color-slide-text: #000000;
+
+  /* Шрифты */
+  --font-logo:    'Dela Gothic One', sans-serif;
+  --font-heading: 'Advent Pro', sans-serif;
+  --font-body:    'Arsenal SC', sans-serif;
+
+  /* Отступы секций */
+  --pad-section:  54px;
+  --pad-tablet:   24px;
+  --pad-mobile:   18px;
+
+  /* Кнопки */
+  --radius-btn: 29.5px;
+
+  /* Анимации */
+  --ticker-speed: 22s;
+}
