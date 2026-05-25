@@ -27,31 +27,33 @@
   <img class="hero__bg" src="assets/images/hero-bg.png" alt="Архитектурная визуализация">
   <div class="hero__gradient"></div>
 
-  <nav class="hero__nav">
-    <a href="#home" class="hero__nav-brand hero__nav-brand--desktop">3DSTATES</a>
-    <div class="hero__nav-links hero__nav-links--desktop">
-      <a href="#usp" class="hero__nav-link">О нас</a>
-      <a href="#purpose" class="hero__nav-link">Этапы работы</a>
-      <a href="#featured" class="hero__nav-link">Работы</a>
-      <a href="#contact" class="hero__nav-link">Контакты</a>
-      <a href="#contact" class="btn btn--white">Заказать модель</a>
+  <div class="hero__inner">
+    <nav class="hero__nav">
+      <a href="#home" class="hero__nav-brand hero__nav-brand--desktop">3DSTATES</a>
+      <div class="hero__nav-links hero__nav-links--desktop">
+        <a href="#usp" class="hero__nav-link">О нас</a>
+        <a href="#purpose" class="hero__nav-link">Этапы работы</a>
+        <a href="#featured" class="hero__nav-link">Работы</a>
+        <a href="#contact" class="hero__nav-link">Контакты</a>
+        <a href="#contact" class="btn btn--white">Заказать модель</a>
+      </div>
+      <button class="nav__hamburger" onclick="openMobileMenu()" aria-label="Меню">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="hero__divider-line"></div>
+
+    <div class="hero__logo-wrap" aria-hidden="true">
+      <div class="hero__logo">3DSTATES</div>
     </div>
-    <button class="nav__hamburger" onclick="openMobileMenu()" aria-label="Меню">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
 
-  <div class="hero__divider-line"></div>
-
-  <div class="hero__logo-wrap" aria-hidden="true">
-    <div class="hero__logo">3DSTATES</div>
-  </div>
-
-  <div class="hero__content">
-    <p class="hero__subtitle">Разработка 3D-моделей и консультация по требованиям АГР</p>
-    <div class="hero__buttons">
-      <a href="#contact" class="btn btn--white">Заказать модель</a>
-      <a href="#contact" class="btn btn--white">Бесплатная консультация</a>
+    <div class="hero__content">
+      <p class="hero__subtitle">Разработка 3D-моделей и консультация по требованиям АГР</p>
+      <div class="hero__buttons">
+        <a href="#contact" class="btn btn--white">Заказать модель</a>
+        <a href="#contact" class="btn btn--white">Бесплатная консультация</a>
+      </div>
     </div>
   </div>
 </section>
@@ -66,50 +68,50 @@
   <div class="usp__grid">
 
     <div class="usp__item">
-      <!-- Точность: гладкий бейдж (badge-check) -->
+      <!-- Точность: сканер (scan) -->
       <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/>
-        <path d="m9 12 2 2 4-4"/>
+        <path d="M3 7V5a2 2 0 0 1 2-2h2"/>
+        <path d="M17 3h2a2 2 0 0 1 2 2v2"/>
+        <path d="M21 17v2a2 2 0 0 1-2 2h-2"/>
+        <path d="M7 21H5a2 2 0 0 1-2-2v-2"/>
+        <circle cx="12" cy="12" r="3"/>
       </svg>
       <h3 class="usp__item-title">Точность</h3>
       <p class="usp__item-text">Наши специалисты тщательно изучают требования и постоянно улучшают навыки разработки, что положительно сказывается на соответствии критериям архкомиссии</p>
     </div>
 
     <div class="usp__item">
-      <!-- Скорость: силуэт человека с подставкой -->
+      <!-- Скорость: спидометр (gauge) -->
       <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="7" r="4"/>
-        <path d="M5.5 20a6.5 6.5 0 0 1 13 0"/>
-        <line x1="3" y1="20" x2="21" y2="20"/>
+        <path d="m12 14 4-4"/>
+        <path d="M3.34 19a10 10 0 1 1 17.32 0"/>
       </svg>
       <h3 class="usp__item-title">Скорость</h3>
       <p class="usp__item-text">Большой опыт разработки позволяет нам выполнять работу быстро и без ошибок, неизменно удовлетворяя запрос заказчика</p>
     </div>
 
     <div class="usp__item">
-      <!-- Гибкость: домик + росток с листьями -->
+      <!-- Гибкость: ползунки настроек (sliders-horizontal) -->
       <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <!-- Росток: стебель + два листочка -->
-        <line x1="4" y1="21" x2="4" y2="13"/>
-        <path d="M4 17Q1 14 2 11"/>
-        <path d="M4 17Q7 14 6 11"/>
-        <!-- Домик: крыша + стены + дверь -->
-        <path d="M9 14l7-6 7 6"/>
-        <path d="M10 14v7h12v-7"/>
-        <path d="M15 21v-5h4v5"/>
+        <line x1="21" y1="4" x2="14" y2="4"/>
+        <line x1="10" y1="4" x2="3" y2="4"/>
+        <line x1="21" y1="12" x2="12" y2="12"/>
+        <line x1="8" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="20" x2="16" y2="20"/>
+        <line x1="12" y1="20" x2="3" y2="20"/>
+        <line x1="14" y1="2" x2="14" y2="6"/>
+        <line x1="8" y1="10" x2="8" y2="14"/>
+        <line x1="16" y1="18" x2="16" y2="22"/>
       </svg>
       <h3 class="usp__item-title">Гибкость</h3>
       <p class="usp__item-text">Мы всегда подбираем наиболее оптимальные условия взаимодействия с заказчиком. Срок и стоимость разработки — обсуждаемые переменные</p>
     </div>
 
     <div class="usp__item">
-      <!-- Гарантия: столбчатый график с трендом -->
+      <!-- Гарантия: щит с галочкой (shield-check) -->
       <svg class="usp__icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <rect x="2" y="15" width="4" height="6" rx="0.5"/>
-        <rect x="10" y="10" width="4" height="11" rx="0.5"/>
-        <rect x="18" y="5" width="4" height="16" rx="0.5"/>
-        <path d="M4 12L12 7L20 3"/>
-        <path d="M17 3h5v5"/>
+        <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/>
+        <path d="m9 12 2 2 4-4"/>
       </svg>
       <h3 class="usp__item-title">Гарантия</h3>
       <p class="usp__item-text">Мы гарантируем заказчику сопровождение в процессе согласования модели с Департаментом Градполитики, обязуясь вносить необходимые корректировки в течение трёх месяцев с момента передачи первой итерации</p>
@@ -264,10 +266,12 @@
 
   <div class="footer__ticker-wrap">
     <div class="footer__ticker" id="ticker">
-      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
-      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
-      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
-      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;3D МОДЕЛИ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
+      <span class="footer__ticker-item">АРХИТЕКТУРА&nbsp;•&nbsp;ТОЧНОСТЬ&nbsp;•&nbsp;СКОРОСТЬ&nbsp;•&nbsp;ГАРАНТИЯ&nbsp;•&nbsp;ГИБКОСТЬ&nbsp;•&nbsp;</span>
     </div>
   </div>
 
