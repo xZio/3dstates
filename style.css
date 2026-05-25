@@ -74,7 +74,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 3;
+  z-index: 110;
 }
 .hero__nav-brand {
   font-family: var(--font-logo);
@@ -216,6 +216,7 @@ body {
   min-height: 380px;
   background: var(--color-bg);
   position: relative;
+  padding: 0 var(--pad-section);
 }
 .cta__slide {
   display: flex;
@@ -278,13 +279,14 @@ body {
   border-bottom: 1px solid var(--color-separator);
 }
 .purpose__step:first-child { border-top: 1px solid var(--color-separator); }
-.purpose__right { position: relative; overflow: hidden; }
+.purpose__right { position: relative; overflow: hidden; padding: 40px var(--pad-section) 40px 0; }
 .purpose__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
+  border-radius: 4px;
 }
 
 /* ── ПРИМЕР НАШИХ РАБОТ ────────────────────────────────── */
@@ -447,6 +449,14 @@ body {
 }
 .contact__input:focus       { border-bottom-color: var(--color-white); }
 .contact__input::placeholder { color: var(--color-white-25); }
+.contact__input:-webkit-autofill,
+.contact__input:-webkit-autofill:hover,
+.contact__input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px #000 inset;
+  -webkit-text-fill-color: #fff;
+  caret-color: #fff;
+  transition: background-color 5000s ease-in-out 0s;
+}
 .contact__group-label {
   font-family: var(--font-body);
   font-size: 13px;
@@ -482,6 +492,22 @@ body {
   height: 16px;
 }
 .contact__submit { display: flex; justify-content: center; margin-top: 8px; }
+.contact__input--error {
+  border-bottom-color: rgba(255, 90, 90, 0.7) !important;
+}
+.contact__error {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 110, 110, 0.85);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+  animation: errorFadeIn 0.2s ease;
+}
+@keyframes errorFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 
 /* ── ФУТЕР ─────────────────────────────────────────────── */
 .footer { background: var(--color-bg); overflow: hidden; }
@@ -557,49 +583,19 @@ body {
 
 /* ── МОБИЛЬНОЕ МЕНЮ (базовые стили) ───────────────────── */
 .mobile-menu {
-  display: flex;
+  display: none;
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.97);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 320px;
+  overflow: hidden;
+  background: transparent;
   z-index: 100;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
-  /* скрытое состояние */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
-}
-.mobile-menu.open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-/* ссылки появляются по одной */
-.mobile-menu__close,
-.mobile-menu a {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.mobile-menu.open .mobile-menu__close    { opacity: 1; transform: translateY(0); transition-delay: 0.08s; }
-.mobile-menu.open a:nth-child(2)         { opacity: 1; transform: translateY(0); transition-delay: 0.13s; }
-.mobile-menu.open a:nth-child(3)         { opacity: 1; transform: translateY(0); transition-delay: 0.18s; }
-.mobile-menu.open a:nth-child(4)         { opacity: 1; transform: translateY(0); transition-delay: 0.23s; }
-.mobile-menu.open a:nth-child(5)         { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
-.mobile-menu.open a:nth-child(6)         { opacity: 1; transform: translateY(0); transition-delay: 0.33s; }
-.mobile-menu__close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  background: none;
-  border: none;
-  color: var(--color-white);
-  font-size: 28px;
-  cursor: pointer;
-  line-height: 1;
+  gap: 20px;
 }
 .mobile-menu a {
   font-family: var(--font-heading);
@@ -607,7 +603,9 @@ body {
   font-size: clamp(24px, 5vw, 40px);
   color: var(--color-white);
   text-decoration: none;
+  transition: opacity 0.2s;
 }
+.mobile-menu a:hover { opacity: 0.7; }
 .nav__hamburger {
   display: none;
   background: none;
@@ -624,7 +622,18 @@ body {
   height: 1.5px;
   background: var(--color-white);
   border-radius: 2px;
-  transition: 0.25s;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity   0.25s ease;
+}
+body.menu-open .nav__hamburger span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+body.menu-open .nav__hamburger span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+body.menu-open .nav__hamburger span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
 }
 
 /* ── MAX-WIDTH (≥1440px) ────────────────────────────────── */
@@ -650,6 +659,21 @@ body {
 
 /* ── АДАПТИВ: ПЛАНШЕТ (≤768px) ────────────────────────── */
 @media (max-width: 768px) {
+  .mobile-menu {
+    display: flex;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .mobile-menu.open { transform: translateY(0); }
+
+  .hero__divider-line,
+  .hero__logo-wrap {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  body.menu-open .hero__divider-line,
+  body.menu-open .hero__logo-wrap {
+    transform: translateY(320px);
+  }
   .hero                 { height: 80svh; }
   .hero__nav            { padding: 0 var(--pad-tablet); }
   .hero__divider-line   { left: var(--pad-tablet); right: var(--pad-tablet); }
@@ -669,9 +693,7 @@ body {
   .cta__slide:first-child { border-right: none; border-bottom: 1px solid #e0e0e0; }
   .cta__footer          { padding: 24px var(--pad-tablet) 44px; }
 
-  .purpose              { grid-template-columns: 1fr; }
   .purpose__left        { padding: 48px var(--pad-tablet); }
-  .purpose__right       { min-height: 320px; }
 
   .featured__header     { padding: 36px var(--pad-tablet) 20px; }
   .featured__viewer     { margin: 20px var(--pad-tablet) 48px; min-height: 300px; }
@@ -688,10 +710,15 @@ body {
   .footer__bottom       { flex-direction: column; gap: 8px; padding: 18px var(--pad-tablet) 24px; }
 }
 
-/* ── АДАПТИВ: ПЛАНШЕТ СРЕДНИЙ (≤900px) — только навбар ── */
-@media (max-width: 900px) and (min-width: 769px) {
+/* ── АДАПТИВ: ПЛАНШЕТ СРЕДНИЙ (≤900px) ─────────────────── */
+@media (max-width: 900px) {
   .hero__nav-links { gap: 20px; }
   .hero__nav-link  { font-size: 14px; }
+
+  .purpose         { grid-template-columns: 1fr; max-height: none; }
+  .purpose__right  { min-height: 500px; padding: 0 var(--pad-tablet); }
+  .purpose__img    { object-position: center 30%; border-radius: 4px; }
+  .cta__slider     { padding: 0 var(--pad-tablet); }
 }
 
 /* ── АДАПТИВ: МОБИЛЬНЫЙ (≤560px) ──────────────────────── */
@@ -716,7 +743,8 @@ body {
   .cta__footer          { padding: 18px var(--pad-mobile) 40px; }
 
   .purpose__left        { padding: 40px var(--pad-mobile); }
-  .purpose__right       { min-height: 260px; }
+  .purpose__right       { min-height: 260px; padding: 0 var(--pad-mobile); }
+  .cta__slider          { padding: 0 var(--pad-mobile); }
 
   .featured__header     { padding: 32px var(--pad-mobile) 18px; }
   .featured__viewer     { margin: 16px var(--pad-mobile) 40px; min-height: 240px; }

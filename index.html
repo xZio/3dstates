@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Advent+Pro:wght@200&family=Arsenal+SC&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="variables.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +15,6 @@
 
 <!-- ═══ MOBILE MENU ═══════════════════════════════════════ -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu__close" onclick="closeMobileMenu()" aria-label="Закрыть">×</button>
   <a href="#" onclick="closeMobileMenu()">Главная</a>
   <a href="#usp" onclick="closeMobileMenu()">О нас</a>
   <a href="#purpose" onclick="closeMobileMenu()">Этапы работы</a>
@@ -37,7 +37,7 @@
         <a href="#contact" class="hero__nav-link">Контакты</a>
         <a href="#contact" class="btn btn--white">Заказать модель</a>
       </div>
-      <button class="nav__hamburger" onclick="openMobileMenu()" aria-label="Меню">
+      <button class="nav__hamburger" onclick="toggleMobileMenu()" aria-label="Меню">
         <span></span><span></span><span></span>
       </button>
     </nav>
@@ -211,27 +211,27 @@
 <!-- ═══ CONTACT FORM ═══════════════════════════════════════ -->
 <section id="contact">
   <h2 class="contact__title">Оставить заявку</h2>
-  <form class="contact__form" onsubmit="handleSubmit(event)">
+  <form class="contact__form" onsubmit="handleSubmit(event)" novalidate>
 
     <div class="contact__row">
       <div class="contact__field">
         <label class="contact__label" for="f-name">ИМЯ</label>
-        <input class="contact__input" id="f-name" type="text" name="name" placeholder="Иван" required>
+        <input class="contact__input" id="f-name" type="text" name="name" placeholder="Иван" autocomplete="given-name" required>
       </div>
       <div class="contact__field">
         <label class="contact__label" for="f-surname">ФАМИЛИЯ</label>
-        <input class="contact__input" id="f-surname" type="text" name="surname" placeholder="Иванов" required>
+        <input class="contact__input" id="f-surname" type="text" name="surname" placeholder="Иванов" autocomplete="family-name" required>
       </div>
     </div>
 
     <div class="contact__field">
       <label class="contact__label" for="f-phone">НОМЕР ТЕЛЕФОНА</label>
-      <input class="contact__input" id="f-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" required>
+      <input class="contact__input" id="f-phone" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
     </div>
 
     <div class="contact__field">
       <label class="contact__label" for="f-email">ПОЧТА</label>
-      <input class="contact__input" id="f-email" type="email" name="email" placeholder="example@mail.ru" required>
+      <input class="contact__input" id="f-email" type="email" name="email" placeholder="example@mail.ru" autocomplete="email" required>
     </div>
 
     <div>
@@ -249,10 +249,12 @@
       </div>
     </div>
 
-    <label class="contact__consent">
-      <input type="checkbox" name="consent" required>
-      Согласие на обработку персональных данных
-    </label>
+    <div class="contact__field">
+      <label class="contact__consent">
+        <input type="checkbox" name="consent" required>
+        Согласие на обработку персональных данных
+      </label>
+    </div>
 
     <div class="contact__submit">
       <button type="submit" class="btn btn--white btn--lg">ОСТАВИТЬ ЗАЯВКУ</button>
@@ -307,7 +309,7 @@
   </div>
 
   <div class="footer__bottom">
-    <span class="footer__copy">© 2024 3DSTATES. Все права защищены.</span>
+    <span class="footer__copy">© <span id="current-year"></span> 3DSTATES. Все права защищены.</span>
     <span class="footer__copy">Разработка 3D-моделей для АГР</span>
   </div>
 
