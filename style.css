@@ -73,9 +73,21 @@ body {
   padding: 0 var(--pad-section);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 28px;
+  justify-content: space-between;
   z-index: 3;
+}
+.hero__nav-brand {
+  font-family: var(--font-logo);
+  font-size: 20px;
+  color: var(--color-white);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+.hero__nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
 }
 .hero__nav-link {
   color: var(--color-white);
@@ -95,9 +107,9 @@ body {
 }
 .hero__logo-wrap {
   position: absolute;
-  top: 60px;
+  top: 96px;
   left: var(--pad-section);
-  right: 0;
+  right: var(--pad-section);
   z-index: 2;
   pointer-events: none;
 }
@@ -594,12 +606,12 @@ body {
   .hero                 { height: 80svh; }
   .hero__nav            { padding: 0 var(--pad-tablet); }
   .hero__divider-line   { left: var(--pad-tablet); right: var(--pad-tablet); }
-  .hero__logo-wrap      { left: var(--pad-tablet); right: 0; }
+  .hero__logo-wrap      { left: var(--pad-tablet); right: var(--pad-tablet); }
   .hero__content        { left: var(--pad-tablet); right: var(--pad-tablet); }
 
-  .hero__nav-link--desktop { display: none; }
-  .hero__nav .btn--desktop { display: none; }
-  .nav__hamburger       { display: flex; }
+  .hero__nav-brand--desktop { display: none; }
+  .hero__nav-links--desktop { display: none; }
+  .nav__hamburger       { display: flex; margin-left: auto; }
 
   .divider              { padding: 60px var(--pad-tablet); }
   .usp                  { padding: 48px var(--pad-tablet) 64px; }
@@ -634,7 +646,7 @@ body {
   .hero                 { height: 65svh; min-height: 380px; }
   .hero__nav            { top: 16px; padding: 0 var(--pad-mobile); gap: 14px; }
   .hero__divider-line   { display: none; }
-  .hero__logo-wrap      { top: 60px; left: var(--pad-mobile); right: 0; }
+  .hero__logo-wrap      { top: 96px; left: var(--pad-mobile); right: var(--pad-mobile); }
   .hero__content        { left: var(--pad-mobile); right: var(--pad-mobile); bottom: 28px; }
   .hero__subtitle       { font-size: 15px; }
   .hero__buttons        { gap: 10px; }
