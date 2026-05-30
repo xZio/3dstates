@@ -28,7 +28,6 @@ body {
 }
 .btn:hover { opacity: 0.82; }
 .btn--white   { background: var(--color-white); color: var(--color-bg); }
-.btn--outline { background: transparent; color: var(--color-white); border-color: var(--color-white-60); }
 .btn--lg      { padding: 10px 40px; font-size: 15px; letter-spacing: 0.05em; }
 
 /* ── РАЗДЕЛИТЕЛЬ ───────────────────────────────────────── */
@@ -151,7 +150,6 @@ body {
   padding: 60px var(--pad-section) 80px;
   overflow: hidden;
 }
-.usp__bg { display: none; }
 .usp__title {
   font-family: var(--font-heading);
   font-weight: 200;
@@ -294,8 +292,8 @@ body {
   background: var(--color-bg);
   position: relative;
   overflow: hidden;
+  padding-bottom: 60px;
 }
-.featured__bg { display: none; }
 .featured__header {
   position: relative;
   z-index: 1;
@@ -349,7 +347,6 @@ body {
   background: var(--color-bg);
   overflow: hidden;
 }
-.testimonials__bg { display: none; }
 .testimonials__content {
   position: relative;
   z-index: 1;
